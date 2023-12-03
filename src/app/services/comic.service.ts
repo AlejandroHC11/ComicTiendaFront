@@ -12,7 +12,7 @@ export class ComicService {
   constructor(private httpClient:HttpClient) { }
 
   getComics():Observable<Comic[]>{
-    return this.httpClient.get<Comic[]>(`${this.url}/Comic/GetComics/page/0/size/5`)
+    return this.httpClient.get<Comic[]>(`${this.url}/Comic/GetComics/`)
   }
 
   createComic(comicData: any): Observable<Comic[]> {
