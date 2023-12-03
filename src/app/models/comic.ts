@@ -1,8 +1,9 @@
 export class Comic {
-    idComic?: number
-    ImageLink?: string
-    ComicName?: string
-    Franchise?: string
-    Stock?: number
-    Price?: number
+    comicId?: number
+    imageLink?: string
+    comicName?: string
+    franchiseId!: string
+    franchiseName?: string ;
+    stock?: number
+    price?: number
 }

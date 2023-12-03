@@ -1,0 +1,32 @@
+<button class="btn btn-primary mb-2" [routerLink]="['/newComic']">Nuevo</button>
+<table class="table table-responsive">
+    <thead class="table-primary">
+        <tr>
+            <th class="text-center">idComic</th>
+            <th class="text-center">Imagen</th>
+            <th class="text-center">Nombre</th>
+            <th class="text-center">Franquicia</th>
+            <th class="text-center">Stock</th>
+            <th class="text-center">Precio</th>
+            <th class="text-center"></th>
+        </tr>
+    </thead>
+    <tbody>        
+        <tr *ngFor="let c of comics" class="align-middle">
+            <td class="text-center">{{ c.comicId }}</td>
+            <td class="text-center">
+                <img [src]="c.imageLink" alt="imagen" width="75">
+            </td>
+            <td class="text-center">{{ c.comicName }}</td>
+            <td class="text-center">{{ c.franchiseName }}</td>
+            <td class="text-center">{{ c.stock }}</td>
+            <td class="text-center">{{ c.price }}</td>
+    
+            <td class="text-center">
+                <a class="btn btn-sm btn-success" style="margin-right: 5px;" [routerLink]="['/updateComic']" [queryParams]="{ comicId: c.comicId }">Modificar</a>
+                <a class="btn btn-sm btn-danger" [routerLink]="['/deleteComic']" [queryParams]="{ comicId: c.comicId }">Eliminar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+

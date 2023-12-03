@@ -1,0 +1,33 @@
+<button class="btn btn-primary mb-2" [routerLink]="['/comics']">Volver</button>
+<div id="container" [formGroup]="form">
+    <div class="mb-3">
+        <label for="ComicId" class="form-label">idComic:</label>
+        <input type="text" formControlName="comicId" [value]="comicId" class="form-control" id="comicId" name="comicId" required>
+    </div>
+    <div class="mb-3">
+        <label for="imageLink" class="form-label">Link de Imagen:</label>
+        <input type="text" formControlName="imageLink" class="form-control" id="imageLink" name="imageLink" required>
+    </div>
+    <div class="mb-3">
+        <label for="comicName" class="form-label">Nombre:</label>
+        <input type="text" formControlName="comicName" class="form-control" id="comicName" name="comicName" required>
+    </div>
+    <div class="mb-3">
+        <label for="franchiseId" class="form-label">Franquicia:</label>
+        <select formControlName="franchiseId" class="form-select" id="franchiseId" name="franchiseId" required>
+            <option value="" disabled selected>Selecciona franquicia</option>
+            <option *ngFor="let franchise of franchises" [value]="franchise.franchiseId">
+                {{ franchise.franchiseName }}
+              </option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="stock" class="form-label">Stock:</label>
+        <input type="number" formControlName="stock" class="form-control" id="stock" name="stock" step="1" required>
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Precio:</label>
+        <input type="text" formControlName="price" class="form-control" id="price" name="price" pattern="^\d+(\.\d{1,2})?$" title="Ingresar valor decimal" required>                
+    </div>                 
+    <button type="submit" class="btn btn-primary" (click)="guardar()">Guardar Producto</button>
+</div>
