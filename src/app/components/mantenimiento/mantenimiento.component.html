@@ -14,12 +14,12 @@
         <tr *ngFor="let c of comics" class="align-middle">
             <td class="text-center">{{ c.idComic }}</td>
             <td class="text-center">
-                <img [src]="c.imagen" alt="imagen" width="75">
+                <img [src]="c.ImageLink" alt="imagen" width="75">
             </td>
-            <td class="text-center">{{ c.nombre }}</td>
-            <td class="text-center">{{ c.franquicia }}</td>
-            <td class="text-center">{{ c.stock }}</td>
-            <td class="text-center">{{ c.precio }}</td>
+            <td class="text-center">{{ c.ComicName }}</td>
+            <td class="text-center">{{ c.Franchise }}</td>
+            <td class="text-center">{{ c.Stock }}</td>
+            <td class="text-center">{{ c.Price }}</td>
     
             <td class="text-center">
                 <a class="btn btn-sm btn-success" style="margin-right: 5px;">Modificar</a>
